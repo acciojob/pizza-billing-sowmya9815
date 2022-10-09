@@ -35,7 +35,7 @@ public class Pizza {
     public void addExtraCheese(){
         // your code goes here
         if(!ec){
-            this.total+=80;
+            total+=80;
             ec = true;
         }
         
@@ -45,10 +45,10 @@ public class Pizza {
         // your code goes here
         if(!et){
             if(isVeg){
-                this.total+=70;
+                total+=70;
             }
             else{
-                this.total+=120;
+                total+=120;
             }
             et=true;
         }
@@ -57,7 +57,7 @@ public class Pizza {
     public void addTakeaway(){
         // your code goes here
         if(!ta){
-            this.total+=20;
+            total+=20;
             ta=true;
         }
 
