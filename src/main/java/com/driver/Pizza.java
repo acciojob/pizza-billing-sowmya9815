@@ -4,7 +4,7 @@ public class Pizza {
 
     private int price;
 
-    int total=0;
+    private int total=0;
 
     private boolean et = false;
     private boolean ec = false;
@@ -46,12 +46,11 @@ public class Pizza {
         if(!et){
             if(isVeg){
                 this.total+=70;
-                et=true;
             }
             else{
                 this.total+=120;
-                et=true;
             }
+            et=true;
         }
     }
 
@@ -87,7 +86,8 @@ public class Pizza {
         if(ta){
             bill+="Paperbag Added: 20\n";
         }
-        bill+= "Total Price: "+ (price+total)+"\n";
+        total=price+total;
+        bill+= "Total Price: "+ total +"\n";
         return this.bill;
     }
 }
