@@ -66,7 +66,7 @@ public class Pizza {
         // your code goes here
         bill="";
         if(isVeg){
-            bill+="Base Price Of The Pizza : 300\n";
+            bill+="Base Price Of The Pizza: 300\n";
         }
         else{
             bill+="Base Price Of The Pizza: 400\n";
@@ -85,7 +85,7 @@ public class Pizza {
         if(ta){
             bill+="Paperbag Added: 20\n";
         }
-        bill+= "Total Price:"+ (price+total);
+        bill+= "Total Price: "+ (price+total);
         return this.bill;
     }
 }
