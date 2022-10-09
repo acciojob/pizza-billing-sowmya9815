@@ -36,8 +36,9 @@ public class Pizza {
         // your code goes here
         if(!ec){
             this.total+=80;
+            ec = true;
         }
-        ec = true;
+        
     }
 
     public void addExtraToppings(){
@@ -45,20 +46,21 @@ public class Pizza {
         if(!et){
             if(isVeg){
                 this.total+=70;
+                et=true;
             }
             else{
                 this.total+=120;
+                et=true;
             }
         }
-        et=true;
     }
 
     public void addTakeaway(){
         // your code goes here
         if(!ta){
             this.total+=20;
+            ta=true;
         }
-        ta=true;
 
     }
 
@@ -85,7 +87,7 @@ public class Pizza {
         if(ta){
             bill+="Paperbag Added: 20\n";
         }
-        bill+= "Total Price: "+ (price+total);
+        bill+= "Total Price: "+ (price+total)+"\n";
         return this.bill;
     }
 }
