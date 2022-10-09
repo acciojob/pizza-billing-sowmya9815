@@ -1,82 +1,91 @@
 package com.driver;
 
 public class Pizza {
-    public int total = 0;
-    public boolean eCheese = false;
-    public boolean eTopping = false;
-    public boolean bag = false;
 
     private int price;
+
+    int total=0;
+
+    private boolean et = false;
+    private boolean ec = false;
+
+    private boolean ta = false;
+
+
+
     private Boolean isVeg;
     private String bill;
-
-    public void setIsVeg(Boolean veg) {
-        isVeg = veg;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setBill(String bill) {
-        this.bill = bill;
-    }
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
-        if (isVeg) {
-            setPrice(300);
+        if(this.isVeg){
+            this.price = 300;
         }
-        else {
-            setPrice(400);
+        else{
+            this.price = 400;
         }
-        total = price;
-        setBill("Base Price Of The Pizza: "+price+"\n");
-
     }
 
     public int getPrice(){
-        return this.total;
+        //this.total=price;
+        return this.price;
     }
 
     public void addExtraCheese(){
         // your code goes here
-        if (!eCheese) {
-            total += 80;
-            setBill(bill+"Extra Cheese Added: 80"+"\n");
-            eCheese = true;
+        if(!ec){
+            this.total+=80;
         }
+        ec = true;
     }
 
     public void addExtraToppings(){
         // your code goes here
-        if (!eTopping) {
-            if (isVeg) {
-                total += 70;
-                setBill(bill+"Extra Toppings Added: 70"+"\n");
+        if(!et){
+            if(isVeg){
+                this.total+=70;
             }
-            else {
-                total += 120;
-                setBill(bill+"Extra Toppings Added: 120"+"\n");
+            else{
+                this.total+=120;
             }
         }
-        eTopping = true;
+        et=true;
     }
 
     public void addTakeaway(){
         // your code goes here
-        if (!bag) {
-            total += 20;
-            setBill(bill+"Paperbag Added: 20"+"\n");
-            bag = true;
+        if(!ta){
+            this.total+=20;
         }
+        ta=true;
 
     }
 
     public String getBill(){
         // your code goes here
-        setBill(bill+"Total Price: "+total);
+        bill="";
+        if(isVeg){
+            bill+="Base Price of The Pizza : 300\n";
+        }
+        else{
+            bill+="Base Price Of The Pizza: 400\n";
+        }
+        if(ec) {
+            bill += "Extra Cheese Added: 80\n";
+        }
+        if(et) {
+            if (isVeg) {
+                bill += "Extra Toppings Added: 70\n";
+            } else {
+                bill += "Extra Toppings Added: 120\n";
+            }
+        }
+
+        if(ta){
+            bill+="Paperbag Added: 20\n";
+        }
+        bill+= "Total Price:"+ (price+total);
         return this.bill;
     }
 }
